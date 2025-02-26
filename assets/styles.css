@@ -1,0 +1,14 @@
+*, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    border: 0;
+}
+
+body {
+    overflow: hidden;
+    background-color: hsl(0, 0%, 6%);
+}
+
+canvas {
+    display: block;
+}
