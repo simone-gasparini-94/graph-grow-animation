@@ -36,10 +36,9 @@ function delay(ms) {
     return new Promise(resolve => setTimeout(resolve, ms));
 }
 
-
 async function animation() {
     const circles = [];
-    const numberOfCircles = 10;
+    const numberOfCircles = 50;
 
     for (let i = 0; i < numberOfCircles; i++) {
         circles.push(getRandomPosition());
@@ -48,12 +47,14 @@ async function animation() {
     drawCircle(circles[0].x, circles[0].y);
 
     for (let i = 1; i < circles.length; i++) {
+
+        let delayTime = 100 + Math.random() * 1000;
         
-        await delay(500)
+        await delay(delayTime);
 
         drawCircle(circles[i].x, circles[i].y);
 
-        await delay(500);
+        await delay(delayTime);
 
         drawLine(circles[i].x, circles[i].y, circles[i - 1].x, circles[i - 1].y);
     }
